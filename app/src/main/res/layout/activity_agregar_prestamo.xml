@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".AgregarPrestamo">
+    <include layout="@layout/toolbar"></include>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_dark"
+        android:gravity="center"
+        android:text="Agregar Prestamos"
+        android:textSize="25dp"
+        android:textColor="@color/primary_light"></TextView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Producto:"
+            android:textColor="@color/primary_dark"
+            android:textSize="25dp"></TextView>
+
+        <EditText
+            android:id="@+id/txtNombreProducto"
+            android:layout_width="291dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:hint="Producto"
+            android:inputType="text"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="25dp"></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Nombre: "
+            android:textSize="25dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="297dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:hint="Nombre persona"
+            android:inputType="text"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="25dp"></EditText>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Fecha Prestamo: "
+            android:textSize="25dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/fechaCaptura"
+            android:hint="DD/MM/AAAA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="calendarioIngreso"
+            android:inputType="date"
+            android:focusable="false"
+            android:clickable="true"
+            android:maxLines="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Fecha Devolucion: "
+            android:textSize="25dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/fechaCaptura2"
+            android:hint="DD/MM/AAAA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="calendarioEgreso"
+            android:inputType="date"
+            android:focusable="false"
+            android:clickable="true"
+            android:maxLines="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Comentario: "
+            android:textSize="25dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="262dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/BtnGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="10dp"
+        android:text="Guardar Prestamo"
+        android:textColor="@color/primary_light"
+        android:textSize="20dp">
+    </Button>
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/BtnCasa"
+        android:layout_width="99dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_menu_revert"/>
+
+
+</LinearLayout>
