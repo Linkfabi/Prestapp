@@ -17,7 +17,18 @@
         android:textSize="25dp"
         android:textColor="@color/primary_light"></TextView>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
     <LinearLayout
+        android:id="@+id/LLproducto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -31,24 +42,20 @@
             android:gravity="center"
             android:text="Producto:"
             android:textColor="@color/primary_dark"
-            android:textSize="25dp"></TextView>
+            android:textSize="20dp"></TextView>
 
-        <EditText
-            android:id="@+id/txtNombreProducto"
-            android:layout_width="291dp"
+        <Spinner
+            android:id="@+id/SpPrestamo"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:background="@color/cardview_light_background"
-            android:hint="Producto"
-            android:inputType="text"
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="25dp"></EditText>
+            android:focusable="true"></Spinner>
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/LLnombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -60,26 +67,399 @@
             android:background="@color/cardview_light_background"
             android:gravity="center"
             android:text="Nombre: "
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textColor="@color/primary_dark"></TextView>
 
         <EditText
             android:id="@+id/txtNombre"
-            android:layout_width="297dp"
+            android:layout_width="297sp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:background="@color/cardview_light_background"
-            android:hint="Nombre persona"
+            android:hint="Ej: Juanito Perez"
             android:inputType="text"
             android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textSize="25dp"></EditText>
+            android:textSize="20dp"></EditText>
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/LLnombreProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Nombre Producto: "
+            android:textSize="20dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/txtNombreProducto"
+            android:layout_width="220sp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:hint="Nombre libro o producto"
+            android:inputType="text"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20dp"></EditText>
+
+    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/LLmarca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Marca: "
+            android:textSize="20dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/txtMarca"
+            android:layout_width="297sp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:hint="Ej: Iphone"
+            android:inputType="text"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20dp"></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LLestado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Estado: "
+            android:textSize="20dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/txtEstado"
+            android:layout_width="297sp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:hint="Ej: Semi Nuevo"
+            android:inputType="text"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20dp"></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LLaccesorios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Accesorios: "
+            android:textSize="20dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/txtAccesorios"
+            android:layout_width="274sp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:hint="Ej: Con cargador y bolso"
+            android:inputType="text"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20dp"></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LLcantidadJuegos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Cantidad Juegos: "
+            android:textSize="20dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/txtCantJuegos"
+            android:layout_width="208sp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:hint="Ej: 2"
+            android:inputType="number"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20dp"></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LLram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Ram: "
+            android:textSize="20dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/txtRam"
+            android:layout_width="297sp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:hint="Ej: 2 GB"
+            android:inputType="text"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20dp"></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LLmodelo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Modelo: "
+            android:textSize="20dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/txtModelo"
+            android:layout_width="297sp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:hint="Ej: Aspire 3"
+            android:inputType="text"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20dp"></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LLhdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Disco Duro: "
+            android:textSize="20dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/txtHDD"
+            android:layout_width="278dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:hint="Ej: 500 GB / 1 TB"
+            android:inputType="text"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20dp"></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LLmonto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Monto: "
+            android:textSize="20dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/txtMonto"
+            android:layout_width="297sp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:hint="Ej: 250.000"
+            android:inputType="numberDecimal"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20dp"></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LLcomision"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="% Comision: "
+            android:textSize="20dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/txtComision"
+            android:layout_width="245dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:hint="Ej: 2.5"
+            android:inputType="numberDecimal"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20dp"></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LLmontoFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Monto Final: "
+            android:textSize="20dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/txtMontoFinal"
+            android:layout_width="199dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:inputType="none"
+            android:textIsSelectable="true"
+            android:focusable="false"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20dp"></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LLpaginas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:gravity="center"
+            android:text="Paginas: "
+            android:textSize="20dp"
+            android:textColor="@color/primary_dark"></TextView>
+
+        <EditText
+            android:id="@+id/txtPaginas"
+            android:layout_width="297sp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cardview_light_background"
+            android:hint="Ej: 256"
+            android:inputType="number"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="20dp"></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LLfechaPrestamo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -91,7 +471,7 @@
             android:background="@color/cardview_light_background"
             android:gravity="center"
             android:text="Fecha Prestamo: "
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textColor="@color/primary_dark"></TextView>
 
         <EditText
@@ -109,6 +489,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/LLfechaEntrega"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -120,7 +501,7 @@
             android:background="@color/cardview_light_background"
             android:gravity="center"
             android:text="Fecha Devolucion: "
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textColor="@color/primary_dark"></TextView>
 
         <EditText
@@ -138,6 +519,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/LLcomentario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -149,7 +531,7 @@
             android:background="@color/cardview_light_background"
             android:gravity="center"
             android:text="Comentario: "
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textColor="@color/primary_dark"></TextView>
 
         <EditText
@@ -177,7 +559,6 @@
     </Button>
 
 
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/BtnCasa"
         android:layout_width="99dp"
@@ -186,5 +567,8 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_menu_revert"/>
 
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
