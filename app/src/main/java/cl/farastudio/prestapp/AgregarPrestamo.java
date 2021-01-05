@@ -23,6 +23,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Calendar;
 
+import cl.farastudio.prestapp.DTO.Prestamo;
+
+import static android.view.View.FIND_VIEWS_WITH_CONTENT_DESCRIPTION;
 import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
@@ -34,8 +37,9 @@ public class AgregarPrestamo extends AppCompatActivity implements AdapterView.On
     String fecha;
     int tipoCalendario=1;
     LinearLayout nombre,nombreProducto,marca,estado,accesorios,cantJuegos,ram,modelo,hdd,monto,comision,montoFinal,paginas,fechaPrestamo,fechaEntrega,comentario;
+    EditText TxtNombre,TxtNombreProducto,TxtMarca,TxtEstado,TxtAccesorios,TxtCantidadJuegos,TxtRam,TxtModelo,TxtHDD,TxtMonto,TxtComision,TxtMontoFinal,TxtPaginas,TxtComentarios;
     Spinner spinner;
-
+    Prestamo prestamo = new Prestamo();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,8 @@ public class AgregarPrestamo extends AppCompatActivity implements AdapterView.On
         calender1 = findViewById(R.id.fechaCaptura);
         calender2 = findViewById(R.id.fechaCaptura2);
         cargarLayout();
+        cargaTxt();
+        spinnerSeleccionNada();
         spinner = (Spinner) findViewById(R.id.SpPrestamo);
         // Cargamos el Spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -104,12 +110,12 @@ public class AgregarPrestamo extends AppCompatActivity implements AdapterView.On
         abrirCalendario();
     }
 
-
     //OnItemSelected me permite realizar una accion depende a la opcion escojida del spinner
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         switch (parent.getId()){
             case R.id.SpPrestamo:
                 int seleccionado = spinner.getSelectedItemPosition();
+                borrarDatosTxt();
                 if(seleccionado == 0){
                     spinnerSeleccionNada();
                 }else if(seleccionado == 1){
@@ -138,6 +144,7 @@ public class AgregarPrestamo extends AppCompatActivity implements AdapterView.On
 
     }
 
+    //carga todos los layout existente en el Activity
     public void cargarLayout (){
         nombre=findViewById(R.id.LLnombre);
         nombreProducto=findViewById(R.id.LLnombreProducto);
@@ -155,6 +162,42 @@ public class AgregarPrestamo extends AppCompatActivity implements AdapterView.On
         fechaPrestamo=findViewById(R.id.LLfechaPrestamo);
         fechaEntrega=findViewById(R.id.LLfechaEntrega);
         comentario=findViewById(R.id.LLcomentario);
+    }
+
+    //Carga todos los TXT editables para poder modificarlos y recibir los datos
+    public void cargaTxt (){
+        TxtNombre=findViewById(R.id.txtNombre);
+        TxtNombreProducto=findViewById(R.id.txtNombreProducto);
+        TxtMarca=findViewById(R.id.txtMarca);
+        TxtEstado=findViewById(R.id.txtEstado);
+        TxtAccesorios=findViewById(R.id.txtAccesorios);
+        TxtCantidadJuegos=findViewById(R.id.txtCantJuegos);
+        TxtRam=findViewById(R.id.txtRam);
+        TxtModelo=findViewById(R.id.txtModelo);
+        TxtHDD=findViewById(R.id.txtHDD);
+        TxtMonto=findViewById(R.id.txtMonto);
+        TxtComision=findViewById(R.id.txtComision);
+        TxtMontoFinal=findViewById(R.id.txtMontoFinal);
+        TxtPaginas=findViewById(R.id.txtPaginas);
+        TxtComentarios=findViewById(R.id.txtComentarios);
+    }
+
+    //Deja en blanco los TXT para evitar que aparescan datos al cambiar de opcion con el spinner
+    public void borrarDatosTxt (){
+        TxtNombre.setText("");
+        TxtNombreProducto.setText("");
+        TxtMarca.setText("");
+        TxtEstado.setText("");
+        TxtAccesorios.setText("");
+        TxtCantidadJuegos.setText("");
+        TxtRam.setText("");
+        TxtModelo.setText("");
+        TxtHDD.setText("");
+        TxtMonto.setText("");
+        TxtComision.setText("");
+        TxtMontoFinal.setText("");
+        TxtPaginas.setText("");
+        TxtComentarios.setText("");
     }
 
     //Visible: muestra el layout, INVISIBLE: lo oculta pero deja el espacio, GONE: lo oculta y elimina el espacio

@@ -535,7 +535,7 @@
             android:textColor="@color/primary_dark"></TextView>
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/txtComentarios"
             android:layout_width="262dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

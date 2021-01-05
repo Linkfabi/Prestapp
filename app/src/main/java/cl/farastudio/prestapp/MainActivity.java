@@ -11,7 +11,11 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 
+import cl.farastudio.prestapp.DTO.Prestamo;
+
 public class MainActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
