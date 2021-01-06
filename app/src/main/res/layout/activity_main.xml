@@ -18,6 +18,58 @@
         android:textSize="25dp"
         android:textColor="@color/primary_light"></TextView>
 
+    <LinearLayout
+        android:id="@+id/LLproducto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/primary_dark">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Seleccione Lista:"
+            android:textSize="20dp"
+            android:textColor="@color/primary_light"></TextView>
+
+        <Spinner
+            android:id="@+id/SpPrestamoMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="true"></Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/textoPrueba"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="Todavia no tiene datos"
+            android:textSize="30dp"
+            android:textColor="@color/primary_light"></TextView>
+    </LinearLayout>
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
     <ListView
         android:id="@+id/lista_prestamo"
         android:layout_width="match_parent"
@@ -33,5 +85,9 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_input_add"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
