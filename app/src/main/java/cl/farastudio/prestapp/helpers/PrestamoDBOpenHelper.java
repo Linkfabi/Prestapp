@@ -37,21 +37,21 @@ public class PrestamoDBOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(sqlCreate);
         sqLiteDatabase.execSQL("INSERT INTO prestamo(tipoPrestamo, nombre, nombreProducto, marca, estado, accesorios, cantidadJuegos" +
-                ", ram, modelo, hdd, monto, comision, montoFinal, fechaPrestamo, fechaEntrega, nota)"+
+                ", ram, modelo, hdd, monto, comision, montoFinal, paginas, fechaPrestamo, fechaEntrega, nota)"+
                 "VALUES ('Dinero'"+  //tipoPrestamo
                 ",'Fabian Astorga'" +  //nombre
                 ",null" +  //nombreProducto
                 ",null" +  //marca
                 ",null" +  //estado
                 ",null" +  //accesorios
-                ",null" +  //cantidadJuegos
+                ",0" +  //cantidadJuegos
                 ",null"+  //ram
                 ",null" +  //modelo
                 ",null" +  //hdd
                 ",5000" +  //monto
                 ",2.5" +  //comision
                 ",5125" +  //montoFinal
-                ",null" +  //paginas
+                ",0" +  //paginas
                 ",'05/1/2021'" +  //fechaPrestamo
                 ",'10/1/2021'"+  //fechaEntrega
                 ",'Si devuelve en mas tiempo se cobra 2% mas de comision')");  //nota

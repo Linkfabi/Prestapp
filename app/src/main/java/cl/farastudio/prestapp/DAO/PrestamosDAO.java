@@ -4,7 +4,7 @@ import java.util.List;
 
 import cl.farastudio.prestapp.DTO.Prestamo;
 
-public interface PrestamoDAO {
+public interface PrestamosDAO {
 
     Prestamo add(Prestamo p);
 

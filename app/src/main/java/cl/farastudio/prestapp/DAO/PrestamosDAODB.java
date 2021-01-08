@@ -10,11 +10,11 @@ import java.util.List;
 import cl.farastudio.prestapp.DTO.Prestamo;
 import cl.farastudio.prestapp.helpers.PrestamoDBOpenHelper;
 
-public class PrestamoDAODB implements PrestamoDAO{
+public class PrestamosDAODB implements PrestamosDAO {
 
     private PrestamoDBOpenHelper db;
 
-    public PrestamoDAODB(Context contexto) {
+    public PrestamosDAODB(Context contexto) {
         this.db = new PrestamoDBOpenHelper(contexto, "prestamo", null, 1);
     }
 

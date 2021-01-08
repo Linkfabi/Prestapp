@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,16 +11,25 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.List;
+
+import cl.farastudio.prestapp.DAO.PrestamosDAO;
+import cl.farastudio.prestapp.DAO.PrestamosDAODB;
 import cl.farastudio.prestapp.DTO.Prestamo;
+import cl.farastudio.prestapp.adapters.PrestamoListAdapter;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    Spinner spinner;
-    TextView texto;
+    private List<Prestamo> prestamo;
+    private PrestamosDAO prestamosDAO = new PrestamosDAODB(this);
+    private ListView prestamoLV;
+    private PrestamoListAdapter adapter;
+    private Spinner spinner;
+    private TextView texto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +39,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setSupportActionBar(toolbar);
         texto = findViewById(R.id.textoPrueba);
 
-        spinner = (Spinner) findViewById(R.id.SpPrestamoMain);
+        this.prestamo =this.prestamosDAO.getAll();
+        this.prestamoLV =findViewById(R.id.lista_prestamo);
+        this.adapter =new PrestamoListAdapter(this,R.layout.prestamo_dinero_list,this.prestamo);
+        this.prestamoLV.setAdapter(this.adapter);
+
+        /*this.prestamoLV.setOnItemClickListener((adapterView, view, i, l) -> {
+            Paciente paciente = pacientes.get(i);
+            Intent intent = new Intent(ListarPacientesActivity.this,VistaPacienteActivity.class);
+            intent.putExtra("paciente",paciente);
+            startActivity(intent);
+        });*/
+
+
+
         // Cargamos el Spinner
+        spinner = (Spinner) findViewById(R.id.SpPrestamoMain);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.tiposPrestamos, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
