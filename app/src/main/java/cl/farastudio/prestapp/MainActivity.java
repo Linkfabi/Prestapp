@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         this.prestamo =this.prestamosDAO.getAll();
         this.prestamoLV =findViewById(R.id.lista_prestamo);
-        this.adapter =new PrestamoListAdapter(this,R.layout.prestamo_dinero_list,this.prestamo);
-        this.prestamoLV.setAdapter(this.adapter);
+
+
 
         /*this.prestamoLV.setOnItemClickListener((adapterView, view, i, l) -> {
             Paciente paciente = pacientes.get(i);
@@ -83,20 +83,36 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     texto.setText("Seleccione una Lista");
                 }else if(seleccionado == 1){
                     texto.setText("Lista Dinero No tiene Datos");
+                    this.adapter =new PrestamoListAdapter(this,R.layout.prestamo_dinero_list,this.prestamo, 1);
+                    this.prestamoLV.setAdapter(this.adapter);
                 }else if(seleccionado == 2){
                     texto.setText("Lista Libro No tiene Datos");
+                    this.adapter =new PrestamoListAdapter(this,R.layout.prestamo_libro_list,this.prestamo, 2);
+                    this.prestamoLV.setAdapter(this.adapter);
                 }else if(seleccionado == 3){
                     texto.setText("Lista Consolas No tiene Datos");
+                    this.adapter =new PrestamoListAdapter(this,R.layout.prestamo_consola_list,this.prestamo, 3);
+                    this.prestamoLV.setAdapter(this.adapter);
                 }else if(seleccionado == 4){
                     texto.setText("Lista Notebook No tiene Datos");
+                    this.adapter =new PrestamoListAdapter(this,R.layout.prestamo_notebook_list,this.prestamo, 4);
+                    this.prestamoLV.setAdapter(this.adapter);
                 }else if(seleccionado == 5){
                     texto.setText("Lista Celular No tiene Datos");
+                    this.adapter =new PrestamoListAdapter(this,R.layout.prestamo_celular_list,this.prestamo, 5);
+                    this.prestamoLV.setAdapter(this.adapter);
                 }else if(seleccionado == 6){
                     texto.setText("Lista Art. Electronico No tiene Datos");
+                    this.adapter =new PrestamoListAdapter(this,R.layout.prestamo_arti_e_g_list,this.prestamo, 6);
+                    this.prestamoLV.setAdapter(this.adapter);
                 }else if(seleccionado == 7){
                     texto.setText("Lista Art. Construccion No tiene Datos");
+                    this.adapter =new PrestamoListAdapter(this,R.layout.prestamo_articonst_list,this.prestamo, 7);
+                    this.prestamoLV.setAdapter(this.adapter);
                 }else if(seleccionado == 8){
                     texto.setText("Lista Otros No tiene Datos");
+                    this.adapter =new PrestamoListAdapter(this,R.layout.prestamo_otros_list,this.prestamo, 8);
+                    this.prestamoLV.setAdapter(this.adapter);
                 }
                 break;
         }

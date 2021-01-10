@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 import java.sql.SQLDataException;
 
-public class PrestamoDBOpenHelper extends SQLiteOpenHelper {
+public class PrestamosDBOpenHelper extends SQLiteOpenHelper {
 
     private final String sqlCreate ="CREATE TABLE prestamo("+"id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"+
             "tipoPrestamo TEXT,"+
@@ -29,7 +29,7 @@ public class PrestamoDBOpenHelper extends SQLiteOpenHelper {
             "fechaEntrega TEXT,"+
             "nota TEXT)";
 
-    public PrestamoDBOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public PrestamosDBOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
@@ -55,11 +55,51 @@ public class PrestamoDBOpenHelper extends SQLiteOpenHelper {
                 ",'05/1/2021'" +  //fechaPrestamo
                 ",'10/1/2021'"+  //fechaEntrega
                 ",'Si devuelve en mas tiempo se cobra 2% mas de comision')");  //nota
+
+        sqLiteDatabase.execSQL("INSERT INTO prestamo(tipoPrestamo, nombre, nombreProducto, marca, estado, accesorios, cantidadJuegos" +
+                ", ram, modelo, hdd, monto, comision, montoFinal, paginas, fechaPrestamo, fechaEntrega, nota)"+
+                "VALUES ('Consolas'"+  //tipoPrestamo
+                ",'Fabian Astorga'" +  //nombre
+                ",'Xbox'" +  //nombreProducto
+                ",null" +  //marca
+                ",null" +  //estado
+                ",'Cables'" +  //accesorios
+                ",5" +  //cantidadJuegos
+                ",null"+  //ram
+                ",null" +  //modelo
+                ",null" +  //hdd
+                ",0" +  //monto
+                ",0" +  //comision
+                ",0" +  //montoFinal
+                ",0" +  //paginas
+                ",'05/1/2021'" +  //fechaPrestamo
+                ",'10/1/2021'"+  //fechaEntrega
+                ",'Rallada')");  //nota
+
+        sqLiteDatabase.execSQL("INSERT INTO prestamo(tipoPrestamo, nombre, nombreProducto, marca, estado, accesorios, cantidadJuegos" +
+                ", ram, modelo, hdd, monto, comision, montoFinal, paginas, fechaPrestamo, fechaEntrega, nota)"+
+                "VALUES ('Consolas'"+  //tipoPrestamo
+                ",'Fabian'" +  //nombre
+                ",'nintendo'" +  //nombreProducto
+                ",null" +  //marca
+                ",null" +  //estado
+                ",'Cables'" +  //accesorios
+                ",5" +  //cantidadJuegos
+                ",null"+  //ram
+                ",null" +  //modelo
+                ",null" +  //hdd
+                ",0" +  //monto
+                ",0" +  //comision
+                ",0" +  //montoFinal
+                ",0" +  //paginas
+                ",'05/1/2021'" +  //fechaPrestamo
+                ",'10/1/2021'"+  //fechaEntrega
+                ",'Rallada')");  //nota
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS prestamo");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS prestamos");
         sqLiteDatabase.execSQL(sqlCreate);
     }
 }
